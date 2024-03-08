@@ -89,7 +89,6 @@ async def test(client, message):
             await message.reply_document(
                 document=filename,
                 disable_notification=True,
-                reply_to_message_id=reply_to_id,
             )
         else:
             await message.reply(final_output)
