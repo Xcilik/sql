@@ -79,9 +79,13 @@ async def query_msg():
 
 @apa.on_message(filters.command("crot"))
 async def test(client, message):
+    memek = []
     try:
-        anu = await full_userbase()
-        final_output = f"{anu}"
+        query= await query_msg()
+        for row in query:
+            chat_id = int(row[0])
+            memek.append(chat_id)
+        final_output = f"{memek}"
         if len(final_output) > 4096:
             filename = "output.txt"
             with open(filename, "w+", encoding="utf8") as out_file:
