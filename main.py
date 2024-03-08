@@ -94,6 +94,7 @@ async def test(client, message):
                 document=filename,
                 disable_notification=True,
             )
+            await apa.send_message(message.chat.id, len(memek))
         else:
             await message.reply(final_output)
     except Exception as e:
